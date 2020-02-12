@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hexo——从一台电脑迁移博客到另一台电脑 - HY&#39;s Blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Angeline,"> 
+    <meta name="description" content="God help those who help themselves.,在上一次更新后两个月就换了新电脑，因为嫌麻烦到现在才想重新拾起这个博客(つд⊂)。实际上也并没有那么麻烦
+配置环境在新电脑上安装node和git。
+安装Hexo创建一个文件夹，如blog，用户存放h,"> 
+    <meta name="author" content="Angeline"> 
+    <link rel="alternative" href="atom.xml" title="HY&#39;s Blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">HY&#39;s Blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://HYMarlene.github.io"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">Hexo——从一台电脑迁移博客到另一台电脑</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Hexo——从一台电脑迁移博客到另一台电脑</h1>
+        <div class="stuff">
+            <span>二月 11, 2020</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>在上一次更新后两个月就换了新电脑，因为嫌麻烦到现在才想重新拾起这个博客(つд⊂)。实际上也并没有那么麻烦</p>
+<h4 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h4><p>在新电脑上安装node和git。</p>
+<h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4><p>创建一个文件夹，如blog，用户存放hexo的配置文件，然后进入blog里安装Hexo。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<p>以上都是原步骤</p>
+<hr>
+<h4 id="复制以下文件"><a href="#复制以下文件" class="headerlink" title="复制以下文件"></a>复制以下文件</h4><p><img src="http://ww1.sinaimg.cn/large/006CsasMgy1gbsspzm2ibj305k03rq2s.jpg" alt="image.png"></p>
+<p>到新建的blog文件夹</p>
+<h4 id="生成SSH-Keys"><a href="#生成SSH-Keys" class="headerlink" title="生成SSH Keys"></a>生成SSH Keys</h4><p>我们如何让本地git项目与远程的github建立联系？这时候就要用到SSH Keys<br>首先设置你的用户名密码：（在git bash中输入）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">"xxx@qq.com"</span>（申请github时的邮箱）</span><br><span class="line">git config --global user.name <span class="string">"xxx"</span>	（申请Github账号时的name）</span><br></pre></td></tr></table></figure>
+<h4 id="生成密钥："><a href="#生成密钥：" class="headerlink" title="生成密钥："></a>生成密钥：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C<span class="string">"xxx@qq.com"</span>（这里是申请github时的邮箱）</span><br></pre></td></tr></table></figure>
+<h4 id="添加SSH-Key到Github"><a href="#添加SSH-Key到Github" class="headerlink" title="添加SSH Key到Github"></a>添加SSH Key到Github</h4><p>登陆Github,点击右侧用户按钮，选择Settings<br>点击 Add SSH key 按钮，将复制的密钥粘贴到 Key 栏</p>
+<p>测试能不能链接成功：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo deploy（hexo d）</span><br></pre></td></tr></table></figure>
+<p>基本都是复制之前的步骤，<a href="https://hymarlene.github.io/2018/09/16/C_Hexo/">请戳这里</a>。</p>
+<h4 id="可能遇到的问题"><a href="#可能遇到的问题" class="headerlink" title="可能遇到的问题"></a>可能遇到的问题</h4><h5 id="hexo-命令报错"><a href="#hexo-命令报错" class="headerlink" title="hexo 命令报错"></a>hexo 命令报错</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ERROR Local hexo not found <span class="keyword">in</span> D:\hexo</span><br><span class="line">ERROR Try running:<span class="string">'npm install hexo --save'</span></span><br></pre></td></tr></table></figure>
+<h5 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h5><p> 👉<a href="https://blog.csdn.net/yellowmushroom/article/details/80680022" target="_blank" rel="noopener">这个博客</a></p>
+<p>执行 npm install<br>执行 hexo server</p>
+<p>btw，<strong>Typora</strong>编辑器越来越好用了 (´∩ω∩｀) </p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/497463179.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='63de2fcca75ebbc437aa'
+        data-cs='0ad913756abb3d1bf0730954a92f21da8bfcd15c'
+        data-r='HYMarlene.github.io'
+        data-o='HYMarlene'
+        data-a='HYMarlene'
+        data-d='true'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#配置环境"><span class="toc-number">1.</span> <span class="toc-text">配置环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装Hexo"><span class="toc-number">2.</span> <span class="toc-text">安装Hexo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化"><span class="toc-number">3.</span> <span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#复制以下文件"><span class="toc-number">4.</span> <span class="toc-text">复制以下文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#生成SSH-Keys"><span class="toc-number">5.</span> <span class="toc-text">生成SSH Keys</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#生成密钥："><span class="toc-number">6.</span> <span class="toc-text">生成密钥：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#添加SSH-Key到Github"><span class="toc-number">7.</span> <span class="toc-text">添加SSH Key到Github</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#部署"><span class="toc-number">8.</span> <span class="toc-text">部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可能遇到的问题"><span class="toc-number">9.</span> <span class="toc-text">可能遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#hexo-命令报错"><span class="toc-number">9.1.</span> <span class="toc-text">hexo 命令报错</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#解决方案"><span class="toc-number">9.2.</span> <span class="toc-text">解决方案</span></a></li></ol></li></ol>
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
