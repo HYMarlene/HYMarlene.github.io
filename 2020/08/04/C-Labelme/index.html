@@ -54,22 +54,22 @@
 
         </div>
         <div class="content markdown">
-            <h4 id="安装labelme"><a href="#安装labelme" class="headerlink" title="安装labelme"></a>安装labelme</h4><p>首先需要安装anaconda</p>
+            <h3 id="安装labelme"><a href="#安装labelme" class="headerlink" title="安装labelme"></a>安装labelme</h3><p>首先需要安装anaconda</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">conda create --name=labelme python=3.6</span><br><span class="line">conda activate labelme</span><br><span class="line"></span><br><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pyqt5</span><br><span class="line">pip install labelme</span><br></pre></td></tr></table></figure>
 <p>使用时在Anaconda Prompt中的labelme环境下输入<code>labelme</code>，如果打开下图所示的界面，则表明安装成功。</p>
 <p>左侧工具栏操作顾名思义，应该很容易看懂。</p>
 <p><img src="http://ww1.sinaimg.cn/large/006CsasMly1ghexw4azu8j31hc0sm1ky.jpg" alt="image.png"></p>
 <hr>
-<h4 id="json文件转换"><a href="#json文件转换" class="headerlink" title="json文件转换"></a>json文件转换</h4><p>对图像数据进行标注，标注完成后保存会生成.json文件。</p>
-<h5 id="单个json文件转换"><a href="#单个json文件转换" class="headerlink" title="单个json文件转换"></a>单个json文件转换</h5><p>使用文件搜索，找到labelme安装路径下的Scripts，进入labelme_json_to_dataset.exe所在目录</p>
+<h3 id="json文件转换"><a href="#json文件转换" class="headerlink" title="json文件转换"></a>json文件转换</h3><p>对图像数据进行标注，标注完成后保存会生成.json文件。</p>
+<h4 id="单个json文件转换"><a href="#单个json文件转换" class="headerlink" title="单个json文件转换"></a>单个json文件转换</h4><p>使用文件搜索，找到labelme安装路径下的Scripts，进入labelme_json_to_dataset.exe所在目录</p>
 <p>对于每个json文件生成一个dataset(包含 img.png，info.yaml，label.png，label_names.txt, label_viz.png五个文件)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">labelme_draw_json.exe 文件路径.json</span><br></pre></td></tr></table></figure>
-<h5 id="批量json文件转换"><a href="#批量json文件转换" class="headerlink" title="批量json文件转换"></a>批量json文件转换</h5><p>需要自己写一个python文件</p>
+<h4 id="批量json文件转换"><a href="#批量json文件转换" class="headerlink" title="批量json文件转换"></a>批量json文件转换</h4><p>需要自己写一个python文件</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">path = <span class="string">r'D:\SS\deeplabv3p\json'</span>   <span class="comment">#存放json文件的目标文件夹</span></span><br><span class="line">json_file = os.listdir(path)</span><br><span class="line">os.chdir(<span class="string">r'C:\ProgramFiles\Anaconda3\envs\labelme\Scripts'</span>) <span class="comment">#存放labelme_json_to_dataset.exe的文件夹</span></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> json_file:</span><br><span class="line">    print(file+<span class="string">"..."</span>)</span><br><span class="line">    os.system(<span class="string">"python labelme_json_to_dataset.exe %s"</span>%(path +<span class="string">'\\'</span>+ file))</span><br><span class="line">    print(file+<span class="string">"complete"</span>)</span><br></pre></td></tr></table></figure>
 <p>在labelme环境下运行该文件</p>
 <p><img src="http://ww1.sinaimg.cn/large/006CsasMly1gheyfq904yj30sl0d2q53.jpg" alt="image.png"></p>
 <p><img src="http://ww1.sinaimg.cn/large/006CsasMly1gheyjnahlvj306w0aujre.jpg" alt="image.png"></p>
-<h5 id="可能出现的Error"><a href="#可能出现的Error" class="headerlink" title="可能出现的Error"></a>可能出现的Error</h5><ol>
+<h4 id="可能出现的Error"><a href="#可能出现的Error" class="headerlink" title="可能出现的Error"></a>可能出现的Error</h4><ol>
 <li><code>TypeError: rectangle() got an unexpected keyword argument &#39;width&#39;</code></li>
 </ol>
 <p>可能有效的解决方法：</p>
@@ -79,7 +79,7 @@
 </ol>
 <p>解决方法：labelme版本问题，在labelme的utils文件夹缺少draw.py文件，网上搜索代码新建一个draw.py</p>
 <ol start="3">
-<li>生成的文件缺少info.yaml</li>
+<li>生成的文件缺少<code>info.yaml</code></li>
 </ol>
 <p><img src="http://ww1.sinaimg.cn/large/006CsasMly1gheyht6297j30ko0520uy.jpg" alt="image.png" style="zoom:80%;"></p>
 <p>可能是labelme版本问题造成的，需要在labelme的<code>json_to_dataset.py</code>文件中添加如下缺少的一部分代码</p>
@@ -116,7 +116,7 @@
     </div>
     
         <div class='side'>
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装labelme"><span class="toc-number">1.</span> <span class="toc-text">安装labelme</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#json文件转换"><span class="toc-number">2.</span> <span class="toc-text">json文件转换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#单个json文件转换"><span class="toc-number">2.1.</span> <span class="toc-text">单个json文件转换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#批量json文件转换"><span class="toc-number">2.2.</span> <span class="toc-text">批量json文件转换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#可能出现的Error"><span class="toc-number">2.3.</span> <span class="toc-text">可能出现的Error</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装labelme"><span class="toc-number">1.</span> <span class="toc-text">安装labelme</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#json文件转换"><span class="toc-number">2.</span> <span class="toc-text">json文件转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#单个json文件转换"><span class="toc-number">2.1.</span> <span class="toc-text">单个json文件转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#批量json文件转换"><span class="toc-number">2.2.</span> <span class="toc-text">批量json文件转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可能出现的Error"><span class="toc-number">2.3.</span> <span class="toc-text">可能出现的Error</span></a></li></ol></li></ol>
         </div>
     
 </div>
